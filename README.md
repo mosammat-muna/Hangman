@@ -12,7 +12,7 @@
 
 <h2>Live Demo</h2>
 <p>
-  Check it out live: <a href="https://mosammat-muna.github.io/hangman/">Movie Hangman</a>
+  Check it out live: <a href="https://mosammat-muna.github.io/Hangman/">Movie Hangman</a>
 </p>
 
 <h2>Technologies Used</h2>
