@@ -1,0 +1,75 @@
+<!--This script sets up the game's layout, including options for category selection, a scoreboard for tracking wins and losses, and controls for gameplay.-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Movie Hangman</title>
+    <!-- Link to stylesheet for game styles -->
+    <link rel="stylesheet" href="hangman.css">
+    <!-- Favicon for the website -->
+    <link rel="shortcut icon" 
+          href="https://mitchum.blog/wp-content/uploads/2019/05/favicon.png" />
+  </head>
+  <body id="losschange">
+    <main>
+      <h1>Movie Hangman</h1>
+
+      <!-- Scoreboard Section to track wins and losses -->
+      <div id="scoreboard">
+        <p>Wins: <span id="wins">0</span></p> <!-- Display wins -->
+        <p>Losses: <span id="losses">0</span></p> <!-- Display losses -->
+      </div>
+
+      <!-- Category Selection Section to let the user pick a movie category -->
+      <div id="category-selection">
+        <label for="category">Select Category:</label>
+        <!-- Dropdown to choose a movie category -->
+        <select id="category">
+          <option value="" disabled selected>Choose a category</option>
+          <option value="Action">Action</option>
+          <option value="Comedy">Comedy</option>
+          <option value="Horror">Horror</option>
+          <option value="Drama">Drama</option>
+          <option value="Sci-Fi">Sci-Fi</option>
+          <!-- Additional categories can be added here -->
+        </select>
+        <!-- Button to start the game after selecting a category -->
+        <button id="startGameButton" class="button" onclick="startGame();">Start Game</button>
+      </div>
+
+      <!-- Lives Section to display the remaining lives -->
+      <div id="lives"><p>Lives: 7</p></div>
+
+      <!-- Gallows Section: Displays hangman images as incorrect guesses are made -->
+      <div id="gallows">
+        <img id="hangmanImage" src="hangman0.png" alt="Hangman Image">
+      </div>
+
+      <!-- Word Display Section: Shows the current word with blanks and revealed letters -->
+      <div id="word"></div>
+      <br>
+
+      <!-- Controls Section for guessing letters or words -->
+      <div id="controls" style="display: none;">
+        <!-- Input box for player to enter a letter -->
+        <input type="text" id="guessBox" maxlength="1" placeholder="Enter a letter">
+        <br><br>
+        <!-- Button for guessing the entire word -->
+        <button id="guessWordButton" class="button" onclick="guessWord(game)">Guess Word</button>
+        <!-- Button for starting a new game -->
+        <button id="newGameButton" class="button" onclick="newGame();">New Game</button>
+        <!-- Button to get a hint for the current word -->
+        <button id="hintButton" class="button" onclick="getHint(game);">Get Hint</button>
+        <br>
+      </div>
+      <br><br>
+
+      <!-- Guesses Section: Displays the letters already guessed -->
+      <div id="guesses"></div>
+    </main>
+    <!-- Link to JavaScript file for game logic -->
+    <script src="hangman.js"></script>
+  </body>
+</html>
+
+
